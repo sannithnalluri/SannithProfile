@@ -1,0 +1,14 @@
+.hero-section {
+    background-image: url("../Assets/bg2.png");
+    width: 100%;
+    background-position: 80% center;;
+    height: 30rem;
+    background-size:contain;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: background-position 1s ease-in-out;
+}
+.heading h1{
+letter-spacing: 10;
+}
+
