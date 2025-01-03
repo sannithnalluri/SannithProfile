@@ -13,25 +13,25 @@ export default function Contact() {
 
     return (
         <div className='container text-white lg:px-20 lg:py-96 text-center'>
-            <h2 className='font-bold text-2xl'>Let’s Get Started</h2>
-            <h1 className='font-bold text-7xl'>LET'S COLLABORATE</h1>
+            <h2 className='font-bold lg:text-2xl'>Let’s Get Started</h2>
+            <h1 className='font-bold lg:text-7xl'>LET'S COLLABORATE</h1>
 
             <div
                 style={{
                     background: '#1D1D1D',
                     textAlignL:'left'
                 }}
-                className='flex justify-around py-5 px-5 rounded-lg mt-20'
+                className='lg:flex justify-around py-5 px-5 rounded-lg mt-20'
             >
-                <div className='heading w-1/2 p-10'>
+                <div className='heading lg:w-1/2 p-10'>
                     <h1 className='text-5xl mb-4'>Contact</h1>
                     <p className='text-sm p-5 mx-10'>
                         Have a project in mind? Let’s bring your vision to life! Reach out to discuss your ideas and get a personalized quote tailored to your needs.
                     </p>
 
-                    <Image className='mx-20' src={bg} alt='bgimage' width={250} height={200} />
+                    <Image className='lg:mx-20' src={bg} alt='bgimage' width={250} height={200} />
                 </div>
-                <div className='form w-1/2 text-left ml-6 p-10'>
+                <div className='form lg:w-1/2 text-left lg:ml-6 p-10'>
                 <label>
                     <span className='text-gray-400 ml-4'>Email</span><br/>
                     <input

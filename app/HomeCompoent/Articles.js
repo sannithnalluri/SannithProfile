@@ -6,7 +6,7 @@ export default function Articles() {
         <div className='mt-10 lg:px-20 h-60'>
             <h2 className="text-gray-600 text-2xl font-bold mb-6 ">[LATEST ARTICLES]</h2>
 
-            <div className='mt-10 grid grid-cols-3 grid-rows-3 gap-5'>
+            <div className='mt-10 grid lg:grid-cols-3 lg:grid-rows-3 gap-5'>
                 <div className='col-span-1 row-span-3 bg-gray-500 rounded w-80 h-60'>
 
                 </div>

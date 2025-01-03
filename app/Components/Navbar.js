@@ -16,7 +16,7 @@ export default function Navbar() {
             <li className='px-3 hover:text-yellow-500'>About</li>
             <li className='px-3 hover:text-yellow-500'>Services</li>
             <li className='px-3 hover:text-yellow-500'>Contact</li>
-            <li className='px-3 hover:text-yellow-500'>Articles</li>
+            {/* <li className='px-3 hover:text-yellow-500'>Articles</li> */}
           </ul>
         </div>
       

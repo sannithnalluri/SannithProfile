@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Features() {
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-8 py-16'>
+    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 px-16 py-16'>
       <div
         style={{
           background: "#111111",

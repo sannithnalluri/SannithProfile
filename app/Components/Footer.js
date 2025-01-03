@@ -7,7 +7,7 @@ import logo from '../Assets/logo.svg'
 export default function Footer() {
     const [message, setMessage] = React.useState('');
     return (
-    <div className='flex justify-between'>
+    <div className='lg:flex justify-between py-10'>
         <div className=''>
             <Image src={logo} alt='logo' width={300} height={250}/>
             <h2>Connect Collebrate Create</h2>
