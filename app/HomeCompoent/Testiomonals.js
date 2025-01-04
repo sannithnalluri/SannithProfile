@@ -8,35 +8,32 @@ const feedback =
 [
     {
       "id": 1,
-      "name": "John Doe",
+      "name": "Kowshik",
       "designation": "Software Engineer",
-      "company": "TechCorp",
-      "profileImage": "https://example.com/profile1.jpg",
+      "company": "FeatureBuild",
       "testimonial": "This service exceeded my expectations. The team was professional, and the results were outstanding. Highly recommended!"
     },
     {
       "id": 2,
-      "name": "Jane Smith",
-      "designation": "Project Manager",
-      "company": "Innovate Inc.",
-      "profileImage": "https://example.com/profile2.jpg",
+      "name": "Visheshwar",
+      "designation": "Founder ",
+      "company": "Collysm Inc.",
       "testimonial": "Working with this team was a delight. Their innovative approach and attention to detail were impressive."
     },
     {
       "id": 3,
-      "name": "Alice Johnson",
-      "designation": "UI/UX Designer",
+      "name": "Rajesh",
+      "designation": "UI/UX Desinger",
       "company": "Creative Studios",
-      "profileImage": "https://example.com/profile3.jpg",
       "testimonial": "The design and functionality provided were top-notch. It truly transformed the way our users interact with our product."
     },
     {
       "id": 4,
-      "name": "Michael Brown",
+      "name": "Rithvik ",
       "designation": "Entrepreneur",
       "company": "Startup Ventures",
       "profileImage": "https://example.com/profile4.jpg",
-      "testimonial": "I was blown away by the quality and speed of delivery. The results were better than I imagined. Thank you!"
+      "testimonial": "Their website redesign transformed our online presence. The design is stunning, and the user experience has dramatically improved. Traffic and engagement have doubled!"
     }
   ]
   
@@ -60,13 +57,12 @@ const user = feedback.find(user => user.id === userId);
         </div>
         <div className='col-span-4'>
             <div className="flex items-center space-x-4">
-              <img className="w-12 h-12 rounded-full object-cover" src={user?.profileImage} alt={user?.name} />
               <div className="flex-grow">
-                <h3 className="text-gray-800 text-lg font-medium">{user?.name}</h3>
+                <h3 className="text-white text-lg font-medium">{user?.name}</h3>
                 <p className="text-gray-600 text-sm">{user?.designation}, {user?.company}</p>
               </div>
             </div>
-            <p className="text-gray-700 text-lg mt-4">{user?.testimonial}</p>
+            <p className="text-white text-lg mt-4">{user?.testimonial}</p>
           </div>
 
           <div onClick={()=>{

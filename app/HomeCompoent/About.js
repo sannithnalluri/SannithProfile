@@ -19,11 +19,13 @@ export default function About() {
                 <div className={`${robotoMono.className} bg-transparent mt-20 w-80 flex`}>
                     {/* Primary button */}
                     <button className="bg-white py-1 px-4 rounded text-lg hidden lg:block">
-                        Let's Connect
+                       <a href='#contact'> Let's Connect</a> 
                     </button>
                     {/* Secondary button with an icon */}
                     <button className="bg-white rounded text-black flex items-center justify-center ml-2 hidden lg:flex">
+                        <a href='#contact'>
                         <MdArrowOutward className="bg-yellow-500 text-white p-2 rounded" size={40} />
+                        </a>
                     </button>
                 </div>
 

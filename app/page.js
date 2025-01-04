@@ -14,13 +14,24 @@ export default function Home() {
   return (
     <div className="">
       <HeroSection/>
+      <div id="about">
+
       <About/>
+      </div>
       <Featues/>
       <Education/>
+      <div id="work">
+
       <Work/>
+      </div>
+      <div id="service">
+
       <Services/>
+      </div>
       <Testiomonals/>
+      <div id="contact">
       <Contact/>
+      </div>
     </div>
   );
 }

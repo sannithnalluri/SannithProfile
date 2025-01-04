@@ -21,7 +21,7 @@ export default function Work() {
       name: 'Hyperride',
       image: hyerride,
       description: 'Hyperride is a car rental platform built with Next.js and Tailwind CSS...',
-      link: 'https://github.com/hyperride-team/hyperride-frontend',
+      link: 'https://hyperride.netlify.app/',
       icon: <MdArrowOutward className="text-red-500 mr-2" />,
     },
     {
@@ -29,7 +29,7 @@ export default function Work() {
       name: 'Naandiventures',
       image: naadiventures,
       description: 'Naandiventures is an online platform for small businesses...',
-      link: 'https://github.com/Naandiventures/naandiventures-frontend',
+      link: 'https://naandiventures.netlify.app/',
       icon: <MdArrowOutward className="text-red-500 mr-2" />,
     },
     {
@@ -37,7 +37,7 @@ export default function Work() {
       name: 'Startify',
       image: statfiy,
       description: 'Startify is a platform for freelance software developers...',
-      link: 'https://github.com/startify-team/startify-frontend',
+      link: 'https://startify360.netlify.app/',
       icon: <MdArrowOutward className="text-red-500 mr-2" />,
     },
   ];

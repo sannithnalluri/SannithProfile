@@ -11,8 +11,65 @@ export default function Contact() {
         orginationName: '',
     });
 
+    const [disableButton, setDisableButton] = useState(false);
+    const [statusMessage, setStatusMessage] = useState('');
+
+    const handleSubmit = async () => {
+        if(
+            userForm.name.trim() === '' ||
+            userForm.email.trim() === '' ||
+            userForm.phone.trim() === '' ||
+            userForm.orginationName.trim() === ''
+        ){
+            setStatusMessage('Please fill in all required fields.');
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(userForm.email)) {
+            setStatusMessage('Please enter a valid email address.');
+            return;
+        }
+
+        if(userForm.phone == 10){
+            setStatusMessage('Please enter a valid phone number.');
+            return;
+        }
+
+        try {
+        setDisableButton(true);
+            const response = await fetch('/api/contact_form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userForm),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setStatusMessage('Form submitted successfully!');
+                setUserForm({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    orginationName: '',
+                });
+                setDisableButton(false);
+            } else {
+                setStatusMessage('Failed to submit the form.');
+                setDisableButton(false);
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setStatusMessage('An error occurred. Please try again later.');
+            setDisableButton(false);
+        }
+    };
+
+
     return (
-        <div className='container text-white lg:px-20 lg:py-96 text-center'>
+        <div className='container text-white lg:px-20 lg:py-6 text-center'>
             <h2 className='font-bold lg:text-2xl'>Let’s Get Started</h2>
             <h1 className='font-bold lg:text-7xl'>LET'S COLLABORATE</h1>
 
@@ -31,7 +88,7 @@ export default function Contact() {
 
                     <Image className='lg:mx-20' src={bg} alt='bgimage' width={250} height={200} />
                 </div>
-                <div className='form lg:w-1/2 text-left lg:ml-6 p-10'>
+                <div className='form lg:w-1/2 text-left lg:ml-6 lg:p-10'>
                 <label>
                     <span className='text-gray-400 ml-4'>Email</span><br/>
                     <input
@@ -41,9 +98,10 @@ export default function Contact() {
                             borderStyle: 'solid',
                             margin:"1rem"
                         }}
-                        className='p-2 px-10 rounded bg-white text-white placeholder-gray-500'
+                        className='p-2 px-10 rounded bg-white text-black placeholder-gray-500'
                         placeholder='example@gmail.com'
                         value={userForm.email}
+                        type='email'
                         onChange={(e) =>
                             setUserForm({ ...userForm, email: e.target.value })
                         }
@@ -59,7 +117,7 @@ export default function Contact() {
                             borderStyle: 'solid',
                             margin:"1rem"
                         }}
-                        className='p-2 px-10 rounded bg-white text-white placeholder-gray-500'
+                        className='p-2 px-10 rounded bg-white text-black placeholder-gray-500'
                         placeholder='JoneDoe'
                         value={userForm.name}
                         onChange={(e) =>
@@ -77,7 +135,7 @@ export default function Contact() {
                             borderStyle: 'solid',
                             margin:"1rem"
                         }}
-                        className='p-2 px-10 rounded bg-white text-white placeholder-gray-500'
+                        className='p-2 px-10 rounded bg-white text-black placeholder-gray-500'
                         placeholder='+91 9XXXXXXX93'
                         value={userForm.phone}
                         onChange={(e) =>
@@ -95,7 +153,7 @@ export default function Contact() {
                             borderStyle: 'solid',
                             margin:"1rem"
                         }}
-                        className='p-2 px-10 rounded bg-white text-white placeholder-gray-500'
+                        className='p-2 px-10 rounded bg-white text-black placeholder-gray-500'
                         placeholder='eg..Google Organization'
                         value={userForm.orginationName}
                         onChange={(e) =>
@@ -105,9 +163,15 @@ export default function Contact() {
                 </label> 
                     <br/>
                    
-                   <div className='px-4 py-2 cursor-pointer bg-yellow-500 rounded w-fit ml-4'>
+                   <div style={{
+                    color:disableButton?'gray':'white'
+                   }} onClick={handleSubmit}
+                   className='px-4 py-2 cursor-pointer bg-yellow-500 rounded w-fit ml-4'>
                     Send Now
                    </div>
+                   {statusMessage && 
+                    <h1 className='text-sm mx-5 my-2 text-red-500'>{statusMessage}</h1>
+                    }
                 </div>
             </div>
         </div>

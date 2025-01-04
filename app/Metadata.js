@@ -45,7 +45,7 @@ export default function MetaData() {
       <meta name="theme-color" content="#333333" />
       <meta name="language" content="English" />
 
-      <title>Your Name - Freelance Full Stack Developer</title>
+      <title>Sannith - Freelance Full Stack Developer</title>
     </Head>
   );
 }

@@ -55,7 +55,7 @@ export default function HeroSection() {
         {/* Call-to-action section with a link and button */}
         <div className={`${roboto.className} flex items-center  mt-2 lg:mt-10  cursor-pointer md:relative left-2/4 bottom-1/3`}>
           {/* Link to another page */}
-          <Link href="/">
+          <Link href="#contact">
             <span className="text-black p-3 rounded underline bg-white">Let’s Connect</span>
           </Link>
           {/* Button with an outward arrow icon */}

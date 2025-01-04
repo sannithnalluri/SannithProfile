@@ -15,7 +15,7 @@ export default function Education() {
                         </div>      
                         <div>
                             <h2 className='lg:text-xl p-0'>Marri Laxman Reddy Institue of Technology and Management</h2>
-                            <h4 className='text-sm mt-2 lg:text-md font-light p-0'>Btech in Computer Science Engneering in Aritifical Intellgence and Manchine Learing</h4>
+                            <h4 className='text-sm mt-2 lg:text-md font-light p-0'>Btech in Computer Science Engineering in Aritifical Intellgence and Machine Learning</h4>
                             <h4 className='text-sm mt-2 lg:text-md font-light  p-0'>Hyderabad, Telangana, India - 2025</h4>
                             
                         </div>              

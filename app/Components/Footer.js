@@ -1,11 +1,42 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaMailchimp, FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import logo from '../Assets/logo.svg'
+import { SiGmail } from "react-icons/si";
+
 
 export default function Footer() {
     const [message, setMessage] = React.useState('');
+    const [loading, setLoading] = React.useState(false);
+    const [error, setError] = React.useState(false);
+
+    const handleSubmit = async (e) => {
+        try {
+            e.preventDefault();
+            setLoading(true);
+            const response = await fetch("http://localhost:3000/api/Message",
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message }),
+                }
+            )
+
+            if (!response.ok) {
+                throw new Error('Failed to send message');
+            }
+            setMessage('');
+            setLoading(false);
+        }
+        catch (error) {
+            setError(error.message);
+            setLoading(false);
+        }
+    }
+
     return (
     <div className='lg:flex justify-between py-10'>
         <div className=''>
@@ -17,7 +48,12 @@ export default function Footer() {
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                     />
-            <div className='bg-yellow-500 text-white p-4 w-fit rounded cursor-pointer'>
+            <div 
+            onClick={handleSubmit}
+            style={{
+                color:loading?'gray':'white'
+            }}
+            className='bg-yellow-500 text-white p-4 w-fit rounded cursor-pointer'>
                 Send feedback
             </div>
         </div>
@@ -32,12 +68,12 @@ export default function Footer() {
                         <h4 className="text-lg font-bold mb-3">Quick Links</h4>
                         <ul className="space-y-2">
                             <li>
-                                <a href="/about" className="hover:text-yellow-500">
+                                <a href="#about" className="hover:text-yellow-500">
                                     About Us
                                 </a>
                             </li>
                             <li>
-                                <a href="/services" className="hover:text-yellow-500">
+                                <a href="#services" className="hover:text-yellow-500">
                                     Services
                                 </a>
                             </li>
@@ -59,23 +95,23 @@ export default function Footer() {
                         <h4 className="text-lg font-bold mb-3">Follow Us</h4>
                         <div className="flex space-x-4">
                             <a
-                                href="https://facebook.com"
+                                href="sannithnalluri@gmail.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-400 hover:text-white"
                             >
-                                <FaFacebookF size={24} />
+                                <SiGmail size={24} />
                             </a>
                             <a
-                                href="https://twitter.com"
+                                href="https://github.com/sannithnalluri"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-400 hover:text-white"
                             >
-                                <FaTwitter size={24} />
+                                <FaGithub size={24} />
                             </a>
                             <a
-                                href="https://instagram.com"
+                                href="https://www.instagram.com/the_sannith/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-400 hover:text-white"
@@ -83,7 +119,7 @@ export default function Footer() {
                                 <FaInstagram size={24} />
                             </a>
                             <a
-                                href="https://linkedin.com"
+                                href="https://www.linkedin.com/in/sannith-kumar-nalluri/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-400 hover:text-white"
@@ -97,13 +133,13 @@ export default function Footer() {
                     <div>
                         <h4 className="text-lg font-bold mb-3">Contact Us</h4>
                         <p>
-                            <span className="font-bold">Email:</span> contact@yourwebsite.com
+                            <span className="font-bold">Email:</span> sannithnalluri@gmail.com
                         </p>
                         <p>
-                            <span className="font-bold">Phone:</span> +123 456 7890
+                            <span className="font-bold">Phone:</span> +91 9398112724
                         </p>
                         <p>
-                            <span className="font-bold">Address:</span> 123 Main Street, City, Country
+                            <span className="font-bold">Address:</span> Hyderabad,Telangana,India
                         </p>
                     </div>
                 </div>
