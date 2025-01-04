@@ -15,7 +15,7 @@ export default function Footer() {
         try {
             e.preventDefault();
             setLoading(true);
-            const response = await fetch("http://localhost:3000/api/Message",
+            const response = await fetch("https://sannithwebsite.netlify.app/api/Message",
                 {
                     method: 'POST',
                     headers: {

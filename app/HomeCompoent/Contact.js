@@ -38,7 +38,7 @@ export default function Contact() {
 
         try {
         setDisableButton(true);
-            const response = await fetch('/api/contact_form', {
+            const response = await fetch('https://sannithwebsite.netlify.app/api/contact_form', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
